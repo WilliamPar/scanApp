@@ -1,24 +1,20 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import * as firebase from 'firebase';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-        <Text>Test</Text>
-        <Text>Test</Text>
-        <Text>Fest</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-        <Text>Fest</Text>
-      </View>
-    );
-  }
-}
+const firebaseConfig = {
+  apiKey: "AIzaSyBy_zwRs7NZ_GZLzO5cU-FOx1axBSsUR_w",
+  authDomain: "scanapp-25187.firebaseapp.com",
+  databaseURL: "https://scanapp-25187.firebaseio.com",
+  projectId: "scanapp-25187",
+  storageBucket: "scanapp-25187.appspot.com",
+  messagingSenderId: "619341792086"
+};
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+console.ignoredYellowBox = [
+  "Setting a timer"
+];
+
 
 const styles = StyleSheet.create({
   container: {
@@ -28,3 +24,37 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default class App extends React.Component {
+  constructor() {
+    super();
+    this.state = { hasToken: false, isLoaded: false };
+  }
+  componentWillMount() {
+    AsyncStorage.getItem('id_token').then((token) => {
+      this.setState({ hasToken: token !== null, isLoaded: true });
+    });
+  }
+  render() {
+    if (!this.state.isLoaded) {
+      return (
+        <ActivityIndicator />
+      )
+    } else {
+      return (
+        <Router>
+          <Scene key='root'>
+            <Scene
+              component={Authentication}
+              initial={!this.state.hasToken}
+              hideNavBar={true}
+              key='Authentication'
+              title='Authentication'
+            />
+            </Scene>
+        </Router>
+    );
+  }
+ }
+}
+
