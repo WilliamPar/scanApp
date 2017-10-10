@@ -1,6 +1,8 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {Component} from 'react';
+import { ActivityIndicator, AsyncStorage, StyleSheet, Text, View } from 'react-native';
+import {Drawer, Router, Scene, Tabs} from 'react-native-router-flux';
 import * as firebase from 'firebase';
+import Authentication from './components/Authentication';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBy_zwRs7NZ_GZLzO5cU-FOx1axBSsUR_w",
