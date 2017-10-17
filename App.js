@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
 import { ActivityIndicator, AsyncStorage, StyleSheet, Text, View } from 'react-native';
+import { Icon } from 'react-native-elements';
 import {Drawer, Router, Scene, Tabs} from 'react-native-router-flux';
 import * as firebase from 'firebase';
 import Authentication from './components/Authentication';
+import CameraPage from './components/CameraPage';
+import HomePage from './components/HomePage';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBy_zwRs7NZ_GZLzO5cU-FOx1axBSsUR_w",
@@ -26,6 +29,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+const TabIcon = ({ focused, title }) => {
+  return (
+    <Icon 
+      name={title}
+      type='material-community'
+      color={focused ? '#333333' : '#c0c0c0'} />
+  );
+}
 
 export default class App extends React.Component {
   constructor() {
@@ -53,7 +65,29 @@ export default class App extends React.Component {
               key='Authentication'
               title='Authentication'
             />
+              <Scene
+                  key="HomeTab"
+                  title="format-list-bulleted"
+                  icon={TabIcon}>
+                  <Scene
+                    component={HomePage}
+                    initial={this.state.hasToken}
+                    key='HomePage'
+                    title='Home Page'
+                  />
+              </Scene>
+        
+            <Scene
+            key="CameraTab"
+            title="camera"
+            icon={TabIcon}>
+            <Scene
+              component={CameraPage}
+              key='CameraPage'
+              title='Camera Page'
+            />
             </Scene>
+          </Scene>
         </Router>
     );
   }

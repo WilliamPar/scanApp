@@ -2,11 +2,11 @@ import React, {Component} from 'react';
 import ReactNative from 'react-native';
 import {Actions} from 'react-native-router-flux';
 import * as firebase from 'firebase';
-import RNFetchBlob from 'react-native-fetch-blob';
 import Camera from 'react-native-camera';
 import { Icon } from 'react-native-elements';
 import StatusBar from './StatusBar';
 import styles from '../styles';
+
 const {
   ActivityIndicator,
   Alert,
@@ -16,10 +16,6 @@ const {
   KeyboardAvoidingView,
   TouchableHighlight
 } = ReactNative;
-const fs = RNFetchBlob.fs;
-const Blob = RNFetchBlob.polyfill.Blob;
-window.XMLHttpRequest = RNFetchBlob.polyfill.XMLHttpRequest
-window.Blob = Blob
 
 class CameraPage extends Component {
   constructor(props) {
@@ -30,58 +26,8 @@ class CameraPage extends Component {
       barcodeType: null,
       progress: 100
     };
-    this.fireRef = firebase.storage().ref('photos');
-    this.photoRef = firebase.database().ref().child('photos');
   }
-  uploadPhoto() {
-    let pathArray = this.state.path.split('/');
-    let firename = '/'+pathArray[pathArray.length-1];
-    let rnfbURI = RNFetchBlob.wrap(this.state.path);
-
-    Blob.build(rnfbURI, { type : 'image/png;'})
-    .then((blob) => {      
-      var uploadTask = this.fireRef.child(firename).put(blob, { contentType : 'image/png' });
-      
-      uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, (snapshot) => {
-        this.setState({ progress: (snapshot.bytesTransferred / snapshot.totalBytes) * 100 });
-      
-        switch (snapshot.state) {
-          case firebase.storage.TaskState.SUCCESS: // or 'success'
-            console.log('Upload is complete');
-            break;
-          case firebase.storage.TaskState.RUNNING: // or 'running'
-            console.log('Upload is running');
-            break;
-          default:
-            console.log(snapshot.state);
-        }
-      }, (error) => {
-        console.error(error);
-      }, () => {
-        this.setState({ path: null, progress: 100 });
-        this.photoRef.push({ title: firename, url: uploadTask.snapshot.downloadURL });
-      });
-    })
-    .catch(err => console.error(err));
-  }
-  takePicture() {
-    this.camera.capture()
-      .then((data) => {
-        this.setState({ photo: data, path: data.path });
-      })
-      .catch(err => console.error(err));
-  }
-  renderUpload() {
-    if (this.state.progress !== 100) {
-      return <ActivityIndicator size='small' color='#FFF'/>;    
-    }
-    return <Icon 
-    name='cloud-upload'
-    type='material-community'
-    color='#333333'
-    style={styles.photoButton}
-    onPress={this.uploadPhoto.bind(this)}/>;
-  }
+  
   renderCamera(){
     return (
       <Camera
@@ -147,7 +93,7 @@ class CameraPage extends Component {
     }else{
       return this.renderCamera();
     }
-  }  
+  }
   render() {
     return (
       <View style={styles.panelContrainer}>

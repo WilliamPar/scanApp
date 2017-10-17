@@ -31,10 +31,10 @@ class Authentication extends Component {
         AsyncStorage.setItem('id_token', idToken);
         console.log(idToken);
         Alert.alert( 'Sign In Successfully!', 'Click the button to go to Home Page!');
-        Actions.Tabbar();
+        Actions.homeTab();
       })
       .catch((err) => {
-        this.setState({ error: 'Failed to obtain user ID token.'+err, loading: false });
+        this.setState({ error: 'Failed to obtain user ID token1.'+err, loading: false });
       });
     })
     .catch((err) => {
@@ -46,10 +46,10 @@ class Authentication extends Component {
             AsyncStorage.setItem('id_token', idToken);
             console.log(idToken);
             Alert.alert( 'Sign Up Successfully!', 'Click the button to go to Home Page!');
-            Actions.Tabbar();
+            //Actions.CameraTab();
           })
           .catch(() => {
-            this.setState({ error: 'Failed to obtain user ID token.', loading: false });
+            this.setState({ error: 'Failed to obtain user ID token2.', loading: false });
           });
         })
         .catch((err) => {
