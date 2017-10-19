@@ -1,0 +1,29 @@
+dependencies: \
+  /Users/thomasfriisrastow/Desktop/GoScan/node_modules/react-native/Libraries/Image/RCTImageCache.m \
+  /Users/thomasfriisrastow/Desktop/GoScan/node_modules/react-native/Libraries/Image/RCTImageCache.h \
+  /Users/thomasfriisrastow/Desktop/GoScan/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTImageLoader.h \
+  /Users/thomasfriisrastow/Desktop/GoScan/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
+  /Users/thomasfriisrastow/Desktop/GoScan/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
+  /Users/thomasfriisrastow/Desktop/GoScan/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
+  /Users/thomasfriisrastow/Desktop/GoScan/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Users/thomasfriisrastow/Desktop/GoScan/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
+  /Users/thomasfriisrastow/Desktop/GoScan/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
+  /Users/thomasfriisrastow/Desktop/GoScan/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h \
+  /Users/thomasfriisrastow/Desktop/GoScan/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTResizeMode.h \
+  /Users/thomasfriisrastow/Desktop/GoScan/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTConvert.h \
+  /Users/thomasfriisrastow/Desktop/GoScan/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAnimationType.h \
+  /Users/thomasfriisrastow/Desktop/GoScan/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBorderStyle.h \
+  /Users/thomasfriisrastow/Desktop/GoScan/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLog.h \
+  /Users/thomasfriisrastow/Desktop/GoScan/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
+  /Users/thomasfriisrastow/Desktop/GoScan/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h \
+  /Users/thomasfriisrastow/Desktop/GoScan/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTPointerEvents.h \
+  /Users/thomasfriisrastow/Desktop/GoScan/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTTextDecorationLineType.h \
+  /Users/thomasfriisrastow/Desktop/GoScan/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/thomasfriisrastow/Desktop/GoScan/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/thomasfriisrastow/Desktop/GoScan/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/thomasfriisrastow/Desktop/GoScan/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTURLRequestHandler.h \
+  /Users/thomasfriisrastow/Desktop/GoScan/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTURLRequestDelegate.h \
+  /Users/thomasfriisrastow/Desktop/GoScan/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTNetworking.h \
+  /Users/thomasfriisrastow/Desktop/GoScan/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTEventEmitter.h \
+  /Users/thomasfriisrastow/Desktop/GoScan/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTNetworkTask.h \
+  /Users/thomasfriisrastow/Desktop/GoScan/node_modules/react-native/Libraries/Image/RCTImageUtils.h
